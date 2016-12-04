@@ -46,7 +46,7 @@ namespace Dapplo.Confluence
 		///     Store the specific HttpBehaviour, which contains a IHttpSettings and also some additional logic for making a
 		///     HttpClient which works with Confluence
 		/// </summary>
-		private readonly IHttpBehaviour _behaviour;
+		protected readonly IHttpBehaviour _behaviour;
 
 		private string _password;
 
@@ -75,7 +75,7 @@ namespace Dapplo.Confluence
 		/// <param name="behaviour">IChangeableHttpBehaviour</param>
 		/// <param name="httpSettings">IHttpSettings</param>
 		/// <returns>the behaviour, but configured as IHttpBehaviour </returns>
-		private IHttpBehaviour ConfigureBehaviour(IChangeableHttpBehaviour behaviour, IHttpSettings httpSettings = null)
+		protected IHttpBehaviour ConfigureBehaviour(IChangeableHttpBehaviour behaviour, IHttpSettings httpSettings = null)
 		{
 			behaviour.HttpSettings = httpSettings ?? HttpExtensionsGlobals.HttpSettings;
 			behaviour.OnHttpRequestMessageCreated = httpMessage =>
@@ -139,7 +139,7 @@ namespace Dapplo.Confluence
 		/// <summary>
 		///     This makes sure that the HttpBehavior is promoted for the following Http call.
 		/// </summary>
-		internal void PromoteContext()
+		protected internal void PromoteContext()
 		{
 			_behaviour.MakeCurrent();
 		}
@@ -152,7 +152,7 @@ namespace Dapplo.Confluence
 		/// <summary>
 		///     The base URI for your Confluence server downloads
 		/// </summary>
-		private Uri ConfluenceDownloadBaseUri { get; }
+		protected Uri ConfluenceDownloadBaseUri { get; }
 
 		#endregion
 
