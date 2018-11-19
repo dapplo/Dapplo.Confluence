@@ -28,7 +28,7 @@
     <PackageReference Include="Dapplo.HttpExtensions" Version="0.9.15">
 		<PrivateAssets>All</PrivateAssets>
 	</PackageReference>
-    <PackageReference Include="Dapplo.HttpExtensions.JsonSimple" Version="0.9.15">
+    <PackageReference Include="Dapplo.HttpExtensions.JsonSimple" Version="0.9.16">
 		<PrivateAssets>All</PrivateAssets>
 	</PackageReference>
     <PackageReference Include="Dapplo.HttpExtensions.OAuth" Version="0.9.15">
