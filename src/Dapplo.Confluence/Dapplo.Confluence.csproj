@@ -11,7 +11,7 @@
     <FileVersion>0.6.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Dapplo.HttpExtensions" Version="0.9.15" />
+    <PackageReference Include="Dapplo.HttpExtensions" Version="0.9.16" />
     <PackageReference Include="Dapplo.HttpExtensions.JsonSimple" Version="0.9.15" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'net461' ">
