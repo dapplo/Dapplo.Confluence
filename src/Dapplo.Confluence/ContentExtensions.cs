@@ -260,9 +260,9 @@ namespace Dapplo.Confluence
         /// <param name="expandSearch">The expand value for the search, when null the value from the ConfluenceClientConfig.ExpandSearch is taken</param>
         /// <param name="cancellationToken">CancellationToken</param>
         /// <returns>Result with content items</returns>
-        public static Task<Result<Content>> SearchAsync(this IContentDomain confluenceClient, IFinalClause cqlClause, string cqlContext = null, int limit = 20, IEnumerable<string> expandSearch = null, CancellationToken cancellationToken = default)
+        public static Task<Result<Content>> SearchAsync(this IContentDomain confluenceClient, IFinalClause cqlClause, string cqlContext = null, int start = 0, int limit = 20, IEnumerable<string> expandSearch = null, CancellationToken cancellationToken = default)
         {
-            return confluenceClient.SearchAsync(cqlClause.ToString(), cqlContext, limit, expandSearch, cancellationToken);
+            return confluenceClient.SearchAsync(cqlClause.ToString(), cqlContext, start, limit, expandSearch, cancellationToken);
         }
 
         /// <summary>
@@ -280,11 +280,11 @@ namespace Dapplo.Confluence
         /// <param name="expandSearch">The expand value for the search, when null the value from the ConfluenceClientConfig.ExpandSearch is taken</param>
         /// <param name="cancellationToken">CancellationToken</param>
         /// <returns>Result with content items</returns>
-        public static async Task<Result<Content>> SearchAsync(this IContentDomain confluenceClient, string cql, string cqlContext = null, int limit = 20, IEnumerable<string> expandSearch = null, CancellationToken cancellationToken = default)
+        public static async Task<Result<Content>> SearchAsync(this IContentDomain confluenceClient, string cql, string cqlContext = null, int start = 0, int limit = 20, IEnumerable<string> expandSearch = null, CancellationToken cancellationToken = default)
         {
             confluenceClient.Behaviour.MakeCurrent();
 
-            var searchUri = confluenceClient.ConfluenceApiUri.AppendSegments("content", "search").ExtendQuery("cql", cql).ExtendQuery("limit", limit);
+            var searchUri = confluenceClient.ConfluenceApiUri.AppendSegments("content", "search").ExtendQuery("cql", cql).ExtendQuery("limit", limit).ExtendQuery("start", start);
 
             var expand = string.Join(",", expandSearch ?? ConfluenceClientConfig.ExpandSearch ?? Enumerable.Empty<string>());
             if (!string.IsNullOrEmpty(expand))
