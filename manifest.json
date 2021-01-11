@@ -1,0 +1,876 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/1/s/doc",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.AttachmentDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.AttachmentDomain.html",
+          "hash": "srzF0CyoNgqi/2QvM3+a4w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.ConfluenceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.ConfluenceClient.html",
+          "hash": "i8MrtyfSQA3OuIUl0kx8tA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.ConfluenceClientConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.ConfluenceClientConfig.html",
+          "hash": "2fNoGVNtoxtG6B8PN2tTlg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.ConfluenceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.ConfluenceException.html",
+          "hash": "62VkzIoKX2kwoNfI2nvCIA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.ContentExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.ContentExtensions.html",
+          "hash": "w45n+vkppddAnLrKvoNCug=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.BaseEntity-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.BaseEntity-1.html",
+          "hash": "gIo0LJ6PL6mT6XlvH9h+cg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Body.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Body.html",
+          "hash": "DkYQB/aD6PLS9zODQxB2Wg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.BodyContent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.BodyContent.html",
+          "hash": "s+T2pjyJXfWL77X5l1jnWg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Children.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Children.html",
+          "hash": "J3TkidzeaPtY4K8Jay8oEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Content.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Content.html",
+          "hash": "gBLpZ9TDCNNAGxJ2XO3g5w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Description.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Description.html",
+          "hash": "DCF6kOQo/HJ9fw2HpqbwFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Error.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Error.html",
+          "hash": "YmMtMNiOn8DuKl14evGM2Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Group.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Group.html",
+          "hash": "fEgAM3mgkv3pd1dhITh11Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.History.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.History.html",
+          "hash": "UmlSAMyHqBvE0lM+CbsKQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.IUserIdentifier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.IUserIdentifier.html",
+          "hash": "ZCiQwgwl491dSYpsEBxkTA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Label.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Label.html",
+          "hash": "fgO+vRRwUY9Ekw+oFmSWpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.LastUpdated.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.LastUpdated.html",
+          "hash": "uHBOALEBCS9mjNyijrAkpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Links.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Links.html",
+          "hash": "Q8f/XzIq/Xt5gYUztdpvfg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.LongRunningTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.LongRunningTask.html",
+          "hash": "J1juTleASM4NKI3QviSKXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Metadata.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Metadata.html",
+          "hash": "qGVsfbmLDaz2AKgqG93rUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.PagingInformation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.PagingInformation.html",
+          "hash": "kE5VQ78ynC2rMw0JWbgExA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Picture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Picture.html",
+          "hash": "An0DOORsFLbkK2iV68MRxA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Plain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Plain.html",
+          "hash": "q1+I3Zq3Hne9TsX9NPVFSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Result-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Result-1.html",
+          "hash": "sAzaRMY1gShTAOwFCNIKeA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.SearchDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.SearchDetails.html",
+          "hash": "mVS1HmWxFTKGc2lQiIlw1w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Space.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Space.html",
+          "hash": "EM3uQcJ+8x9ZxxWPKGhlRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.SpaceContents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.SpaceContents.html",
+          "hash": "cI3d84YT1hLaTVt5+U1Szw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.SystemInfoEntity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.SystemInfoEntity.html",
+          "hash": "I9/A1YmmRrV3kywpqr4VhA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.User.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.User.html",
+          "hash": "toSiXioOJd5DdC3A400TFA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.UserWatch.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.UserWatch.html",
+          "hash": "bcsvRByjD4+OVUOLo9m3rg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.Version.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.Version.html",
+          "hash": "ezg9Vh6f+vP6eGB4gXcyAg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Entities.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Entities.html",
+          "hash": "DAjkE5Rd4qbftHfeWuyplQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.GroupDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.GroupDomain.html",
+          "hash": "5S2Iotw9kMDU39e5V86GaQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IAttachmentDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IAttachmentDomain.html",
+          "hash": "c9kSnoFsqD44l0D7fgg0fw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IConfluenceClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IConfluenceClient.html",
+          "hash": "qkcAEy+0y4YGCxqShXBM5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IConfluenceClientPlugins.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IConfluenceClientPlugins.html",
+          "hash": "JzASPK/VP4txSyiYU/ioXQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IConfluenceDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IConfluenceDomain.html",
+          "hash": "gzDelP39nk5NwhJGsWzsfQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IContentDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IContentDomain.html",
+          "hash": "bJQXNCeuGaUl6YlEJLAA8A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IGroupDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IGroupDomain.html",
+          "hash": "2ldE1YTUd5gt7csHu+YuIw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IMiscDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IMiscDomain.html",
+          "hash": "/P7pechlu76goTEfhojDSw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.ISpaceDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.ISpaceDomain.html",
+          "hash": "j4LhFZtNbSjCaWMEC721AQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.IUserDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.IUserDomain.html",
+          "hash": "GubMPk4MiSlVj2VV3mw1hw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.MiscExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.MiscExtensions.html",
+          "hash": "66fiIWHEh4UV7cW3/5c/Vg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.ContentTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.ContentTypes.html",
+          "hash": "y7WbUkOH7Bbkwl8NJDi3ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.Fields.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.Fields.html",
+          "hash": "0J2kX175iUgjDBeyd0eRmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.IContentClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.IContentClause.html",
+          "hash": "6+RvU5Wvmrf2QnHW7dwXRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.IDatetimeClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.IDatetimeClause.html",
+          "hash": "outoF9z68lxmhfO+gpMcQg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.IDatetimeClauseWithoutValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.IDatetimeClauseWithoutValue.html",
+          "hash": "f1P+SfaRm4K/hwgKS7Hr2g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.IFinalClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.IFinalClause.html",
+          "hash": "E4g73PgvmI+2w3myJzi9+A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.ISimpleValueClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.ISimpleValueClause.html",
+          "hash": "M+25xpDzG6tzk0i4X5aWgA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.ISpaceClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.ISpaceClause.html",
+          "hash": "BaX3eI+NarqexyUDZ4h97Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.ITextClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.ITextClause.html",
+          "hash": "I5AW54/egr7zSzjgbltgbg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.ITitleClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.ITitleClause.html",
+          "hash": "9YYyret8dht7gwEkOpq9Jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.ITypeClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.ITypeClause.html",
+          "hash": "I9hFJl3jQvGgwSk3ARUrEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.IUserClause.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.IUserClause.html",
+          "hash": "7s4sodDhneiMreSNIOWkhw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.Operators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.Operators.html",
+          "hash": "IOvBxT1tbLnUDONXDnoSmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.Where.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.Where.html",
+          "hash": "kO/9pIMTJ1GfESbp9a2dkA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.Query.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.Query.html",
+          "hash": "iQuAwWkQlOCTPQ4NLANIJg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.SpaceExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.SpaceExtensions.html",
+          "hash": "Rt7Q2vWBoOc3LsW55cqBOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.UserDomain.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.UserDomain.html",
+          "hash": "9MrJ0UiBXQ1lIvLkv1rMwg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.UserIdentifierExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.UserIdentifierExtensions.html",
+          "hash": "zR4j/qvsOVDpbHHm00n3Ew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Dapplo.Confluence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Dapplo.Confluence.html",
+          "hash": "NHHIUUHCaUabFYgRGB/ZOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "XT+qjWs0QKlesgE75U+04A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "4PBWwlQDlSMU90787mrFYg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/d.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/d.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/favicon.ico",
+      "output": {
+        "resource": {
+          "relative_path": "images/favicon.ico"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.svg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "kWxxBU5Jhz8WbYm6u5iBJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 62,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: last post processor info is null.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
