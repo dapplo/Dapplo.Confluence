@@ -1,0 +1,908 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IConfluenceClient
+   | Dapplo.Confluence </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IConfluenceClient
+   | Dapplo.Confluence ">
+    <meta name="generator" content="docfx 2.59.4.0">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc">
+    <meta property="docfx:tocrel" content="toc">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../images/d.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+                <ul class="nav level1 navbar-nav">
+                  <li class="">
+                    <a href="../articles/intro.html" title="Articles" class="">Articles</a>
+                  </li>
+                  <li class="active">
+                    <a href="../api/index.html" title="Api Documentation" class="active">Api Documentation</a>
+                  </li>
+                </ul>
+            </div>
+          </div>
+        </nav>        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+                  
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Dapplo.Confluence.html" title="Dapplo.Confluence" class="">Dapplo.Confluence</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Dapplo.Confluence.AttachmentDomain.html" title="AttachmentDomain" class="">AttachmentDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.ConfluenceClient.html" title="ConfluenceClient" class="">ConfluenceClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.ConfluenceClientConfig.html" title="ConfluenceClientConfig" class="">ConfluenceClientConfig</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.ConfluenceException.html" title="ConfluenceException" class="">ConfluenceException</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.ContentExtensions.html" title="ContentExtensions" class="">ContentExtensions</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.GroupDomain.html" title="GroupDomain" class="">GroupDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IAttachmentDomain.html" title="IAttachmentDomain" class="">IAttachmentDomain</a>
+                          </li>
+                          <li class="active">
+                            <a href="Dapplo.Confluence.IConfluenceClient.html" title="IConfluenceClient" class="active">IConfluenceClient</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IConfluenceClientPlugins.html" title="IConfluenceClientPlugins" class="">IConfluenceClientPlugins</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IConfluenceDomain.html" title="IConfluenceDomain" class="">IConfluenceDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IContentDomain.html" title="IContentDomain" class="">IContentDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IGroupDomain.html" title="IGroupDomain" class="">IGroupDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IMiscDomain.html" title="IMiscDomain" class="">IMiscDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.ISpaceDomain.html" title="ISpaceDomain" class="">ISpaceDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.IUserDomain.html" title="IUserDomain" class="">IUserDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.MiscExtensions.html" title="MiscExtensions" class="">MiscExtensions</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.SpaceExtensions.html" title="SpaceExtensions" class="">SpaceExtensions</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.UserDomain.html" title="UserDomain" class="">UserDomain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.UserIdentifierExtensions.html" title="UserIdentifierExtensions" class="">UserIdentifierExtensions</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Dapplo.Confluence.Entities.html" title="Dapplo.Confluence.Entities" class="">Dapplo.Confluence.Entities</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.BaseEntity-1.html" title="BaseEntity&lt;TId&gt;" class="">BaseEntity&lt;TId&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Body.html" title="Body" class="">Body</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.BodyContent.html" title="BodyContent" class="">BodyContent</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Children.html" title="Children" class="">Children</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Content.html" title="Content" class="">Content</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.CopyContent.html" title="CopyContent" class="">CopyContent</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.CopyDestinations.html" title="CopyDestinations" class="">CopyDestinations</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.CopyPageRequestDestination.html" title="CopyPageRequestDestination" class="">CopyPageRequestDestination</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Description.html" title="Description" class="">Description</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Error.html" title="Error" class="">Error</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Group.html" title="Group" class="">Group</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.History.html" title="History" class="">History</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.IUserIdentifier.html" title="IUserIdentifier" class="">IUserIdentifier</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Label.html" title="Label" class="">Label</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.LastUpdated.html" title="LastUpdated" class="">LastUpdated</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Links.html" title="Links" class="">Links</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.LongRunningTask.html" title="LongRunningTask" class="">LongRunningTask</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Metadata.html" title="Metadata" class="">Metadata</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.PagingInformation.html" title="PagingInformation" class="">PagingInformation</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Picture.html" title="Picture" class="">Picture</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Plain.html" title="Plain" class="">Plain</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Positions.html" title="Positions" class="">Positions</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Result-1.html" title="Result&lt;TResult&gt;" class="">Result&lt;TResult&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.SearchDetails.html" title="SearchDetails" class="">SearchDetails</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Space.html" title="Space" class="">Space</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.SpaceContents.html" title="SpaceContents" class="">SpaceContents</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.SystemInfoEntity.html" title="SystemInfoEntity" class="">SystemInfoEntity</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.User.html" title="User" class="">User</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.UserWatch.html" title="UserWatch" class="">UserWatch</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Entities.Version.html" title="Version" class="">Version</a>
+                          </li>
+                        </ul>  </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="Dapplo.Confluence.Query.html" title="Dapplo.Confluence.Query" class="">Dapplo.Confluence.Query</a>
+                        
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.ContentTypes.html" title="ContentTypes" class="">ContentTypes</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.Fields.html" title="Fields" class="">Fields</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.IContentClause.html" title="IContentClause" class="">IContentClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.IDatetimeClause.html" title="IDatetimeClause" class="">IDatetimeClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.IDatetimeClauseWithoutValue.html" title="IDatetimeClauseWithoutValue" class="">IDatetimeClauseWithoutValue</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.IFinalClause.html" title="IFinalClause" class="">IFinalClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.ISimpleValueClause.html" title="ISimpleValueClause" class="">ISimpleValueClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.ISpaceClause.html" title="ISpaceClause" class="">ISpaceClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.ITextClause.html" title="ITextClause" class="">ITextClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.ITitleClause.html" title="ITitleClause" class="">ITitleClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.ITypeClause.html" title="ITypeClause" class="">ITypeClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.IUserClause.html" title="IUserClause" class="">IUserClause</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.Operators.html" title="Operators" class="">Operators</a>
+                          </li>
+                          <li class="">
+                            <a href="Dapplo.Confluence.Query.Where.html" title="Where" class="">Where</a>
+                          </li>
+                        </ul>  </li>
+                  </ul>        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Dapplo.Confluence.IConfluenceClient">
+  
+  
+  <h1 id="Dapplo_Confluence_IConfluenceClient" data-uid="Dapplo.Confluence.IConfluenceClient" class="text-break">Interface IConfluenceClient
+  </h1>
+  <div class="markdown level0 summary"><p>The is the interface to the base client functionality of the Confluence API</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Dapplo.Confluence.html">Dapplo.Confluence</a></h6>
+  <h6><strong>Assembly</strong>: Dapplo.Confluence.dll</h6>
+  <h5 id="Dapplo_Confluence_IConfluenceClient_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IConfluenceClient</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_Attachment.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.Attachment%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L15">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_Attachment_" data-uid="Dapplo.Confluence.IConfluenceClient.Attachment*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_Attachment" data-uid="Dapplo.Confluence.IConfluenceClient.Attachment">Attachment</h4>
+  <div class="markdown level1 summary"><p>The attachment domain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IAttachmentDomain Attachment { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.IAttachmentDomain.html">IAttachmentDomain</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_ConfluenceApiUri.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.ConfluenceApiUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L20">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_ConfluenceApiUri_" data-uid="Dapplo.Confluence.IConfluenceClient.ConfluenceApiUri*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_ConfluenceApiUri" data-uid="Dapplo.Confluence.IConfluenceClient.ConfluenceApiUri">ConfluenceApiUri</h4>
+  <div class="markdown level1 summary"><p>The base URI for your Confluence server api calls</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Uri ConfluenceApiUri { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_ConfluenceUri.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.ConfluenceUri%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L25">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_ConfluenceUri_" data-uid="Dapplo.Confluence.IConfluenceClient.ConfluenceUri*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_ConfluenceUri" data-uid="Dapplo.Confluence.IConfluenceClient.ConfluenceUri">ConfluenceUri</h4>
+  <div class="markdown level1 summary"><p>The base URI for your Confluence server downloads</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Uri ConfluenceUri { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_Content.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.Content%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L30">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_Content_" data-uid="Dapplo.Confluence.IConfluenceClient.Content*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_Content" data-uid="Dapplo.Confluence.IConfluenceClient.Content">Content</h4>
+  <div class="markdown level1 summary"><p>The content domain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IContentDomain Content { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.IContentDomain.html">IContentDomain</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_Group.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.Group%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L35">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_Group_" data-uid="Dapplo.Confluence.IConfluenceClient.Group*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_Group" data-uid="Dapplo.Confluence.IConfluenceClient.Group">Group</h4>
+  <div class="markdown level1 summary"><p>The group domain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IGroupDomain Group { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.IGroupDomain.html">IGroupDomain</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_Misc.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.Misc%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L40">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_Misc_" data-uid="Dapplo.Confluence.IConfluenceClient.Misc*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_Misc" data-uid="Dapplo.Confluence.IConfluenceClient.Misc">Misc</h4>
+  <div class="markdown level1 summary"><p>The misc domain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IMiscDomain Misc { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.IMiscDomain.html">IMiscDomain</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_Plugins.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.Plugins%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L45">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_Plugins_" data-uid="Dapplo.Confluence.IConfluenceClient.Plugins*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_Plugins" data-uid="Dapplo.Confluence.IConfluenceClient.Plugins">Plugins</h4>
+  <div class="markdown level1 summary"><p>Extensions of the client dock to this property, so typing &quot;confluenceClient.Plugins.&quot; should show your extension.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IConfluenceClientPlugins Plugins { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.IConfluenceClientPlugins.html">IConfluenceClientPlugins</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_Space.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.Space%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L50">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_Space_" data-uid="Dapplo.Confluence.IConfluenceClient.Space*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_Space" data-uid="Dapplo.Confluence.IConfluenceClient.Space">Space</h4>
+  <div class="markdown level1 summary"><p>The space domain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">ISpaceDomain Space { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.ISpaceDomain.html">ISpaceDomain</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_User.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.User%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L55">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_User_" data-uid="Dapplo.Confluence.IConfluenceClient.User*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_User" data-uid="Dapplo.Confluence.IConfluenceClient.User">User</h4>
+  <div class="markdown level1 summary"><p>The user domain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IUserDomain User { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Dapplo.Confluence.IUserDomain.html">IUserDomain</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_CreateDownloadUri_Links_.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.CreateDownloadUri(Links)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L62">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_CreateDownloadUri_" data-uid="Dapplo.Confluence.IConfluenceClient.CreateDownloadUri*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_CreateDownloadUri_Links_" data-uid="Dapplo.Confluence.IConfluenceClient.CreateDownloadUri(Links)">CreateDownloadUri(Links)</h4>
+  <div class="markdown level1 summary"><p>Retrieve the Download as Uri from the supplied links object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Uri CreateDownloadUri(Links links)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Links</span></td>
+        <td><span class="parametername">links</span></td>
+        <td><p>Links</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td><p>Uri</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_CreateTinyUiUri_Links_.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.CreateTinyUiUri(Links)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L69">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_CreateTinyUiUri_" data-uid="Dapplo.Confluence.IConfluenceClient.CreateTinyUiUri*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_CreateTinyUiUri_Links_" data-uid="Dapplo.Confluence.IConfluenceClient.CreateTinyUiUri(Links)">CreateTinyUiUri(Links)</h4>
+  <div class="markdown level1 summary"><p>Retrieve the TinyUi as Uri from the supplied links object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Uri CreateTinyUiUri(Links links)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Links</span></td>
+        <td><span class="parametername">links</span></td>
+        <td><p>Links</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td><p>Uri</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_CreateWebUiUri_Links_.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.CreateWebUiUri(Links)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L76">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_CreateWebUiUri_" data-uid="Dapplo.Confluence.IConfluenceClient.CreateWebUiUri*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_CreateWebUiUri_Links_" data-uid="Dapplo.Confluence.IConfluenceClient.CreateWebUiUri(Links)">CreateWebUiUri(Links)</h4>
+  <div class="markdown level1 summary"><p>Retrieve the WebUi as Uri from the supplied links object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Uri CreateWebUiUri(Links links)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Links</span></td>
+        <td><span class="parametername">links</span></td>
+        <td><p>Links</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Uri</span></td>
+        <td><p>Uri</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_IsCloudServer_CancellationToken_.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.IsCloudServer(CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L96">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_IsCloudServer_" data-uid="Dapplo.Confluence.IConfluenceClient.IsCloudServer*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_IsCloudServer_CancellationToken_" data-uid="Dapplo.Confluence.IConfluenceClient.IsCloudServer(CancellationToken)">IsCloudServer(CancellationToken)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task&lt;bool&gt; IsCloudServer(CancellationToken cancellationToken = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>bool</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_SetBasicAuthentication_System_String_System_String_.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.SetBasicAuthentication(System.String%2CSystem.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L83">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_SetBasicAuthentication_" data-uid="Dapplo.Confluence.IConfluenceClient.SetBasicAuthentication*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_SetBasicAuthentication_System_String_System_String_" data-uid="Dapplo.Confluence.IConfluenceClient.SetBasicAuthentication(System.String,System.String)">SetBasicAuthentication(String, String)</h4>
+  <div class="markdown level1 summary"><p>Enables basic authentication for every request following this call</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetBasicAuthentication(string user, string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>string with the confluence user</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>string with the password for the confluence user</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient_SetBearerAuthentication_System_String_.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient.SetBearerAuthentication(System.String)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L89">View Source</a>
+  </span>
+  <a id="Dapplo_Confluence_IConfluenceClient_SetBearerAuthentication_" data-uid="Dapplo.Confluence.IConfluenceClient.SetBearerAuthentication*"></a>
+  <h4 id="Dapplo_Confluence_IConfluenceClient_SetBearerAuthentication_System_String_" data-uid="Dapplo.Confluence.IConfluenceClient.SetBearerAuthentication(System.String)">SetBearerAuthentication(String)</h4>
+  <div class="markdown level1 summary"><p>Enables bearer authentication for every request following this call</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void SetBearerAuthentication(string bearer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">bearer</span></td>
+        <td><p>string with the bearer (personal access token) for the confluence user</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dapplo/Dapplo.Confluence/new/master/apiSpec/new?filename=Dapplo_Confluence_IConfluenceClient.md&amp;value=---%0Auid%3A%20Dapplo.Confluence.IConfluenceClient%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dapplo/Dapplo.Confluence/blob/master/src/Dapplo.Confluence/IConfluenceClient.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2017 Dapplo
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
