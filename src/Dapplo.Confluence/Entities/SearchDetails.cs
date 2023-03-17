@@ -31,4 +31,9 @@ public class SearchDetails : PagingInformation
     /// Specify the search expand values, default is what is specified in the ConfluenceClientConfig.ExpandSearch
     /// </summary>
     public IEnumerable<string> ExpandSearch { get; set; } = ConfluenceClientConfig.ExpandSearch;
+
+    /// <summary>
+    /// Cursor used to page trought search results.
+    /// </summary>
+    public string Cursor { get; set; }
 }

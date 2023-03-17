@@ -262,11 +262,12 @@ public static class ContentExtensions
     ///     the execution context for CQL functions, provides current space key and content id. If this is
     ///     not provided some CQL functions will not be available.
     /// </param>
+    /// <param name="cursor">Cursor identifier to get the next pages of the results</param>
     /// <param name="pagingInformation">PagingInformation</param>
     /// <param name="expandSearch">The expand value for the search, when null the value from the ConfluenceClientConfig.ExpandSearch is taken</param>
     /// <param name="cancellationToken">CancellationToken</param>
     /// <returns>Result with content items</returns>
-    public static Task<Result<Content>> SearchAsync(this IContentDomain confluenceClient, IFinalClause cqlClause, string cqlContext = null, PagingInformation pagingInformation = null, IEnumerable<string> expandSearch = null,
+    public static Task<CursorBasedResult<Content>> SearchAsync(this IContentDomain confluenceClient, IFinalClause cqlClause, string cqlContext = null, string cursor = null, PagingInformation pagingInformation = null, IEnumerable<string> expandSearch = null,
         CancellationToken cancellationToken = default)
     {
         var searchDetails = new SearchDetails(cqlClause)
@@ -283,6 +284,11 @@ public static class ContentExtensions
         {
             searchDetails.ExpandSearch = expandSearch;
         }
+        if (cursor != null)
+        {
+            searchDetails.Cursor = cursor;
+        }
+
         return confluenceClient.SearchAsync(searchDetails, cancellationToken);
     }
 
@@ -295,7 +301,7 @@ public static class ContentExtensions
     /// <param name="searchDetails">All the details needed for a search</param>
     /// <param name="cancellationToken">CancellationToken</param>
     /// <returns>Result with content items</returns>
-    public static async Task<Result<Content>> SearchAsync(this IContentDomain confluenceClient, SearchDetails searchDetails, CancellationToken cancellationToken = default)
+    public static async Task<CursorBasedResult<Content>> SearchAsync(this IContentDomain confluenceClient, SearchDetails searchDetails, CancellationToken cancellationToken = default)
     {
         if (searchDetails == null) throw new ArgumentNullException(nameof(searchDetails));
 
@@ -311,6 +317,12 @@ public static class ContentExtensions
         {
             searchUri = searchUri.ExtendQuery("start", searchDetails.Start);
         }
+        if (!string.IsNullOrEmpty(searchDetails.Cursor))
+        {
+            searchUri = searchUri.ExtendQuery("cursor", searchDetails.Cursor);
+            searchUri = searchUri.ExtendQuery("next", "true");
+        }
+
 
         var expand = string.Join(",", searchDetails.ExpandSearch ?? ConfluenceClientConfig.ExpandSearch ?? Enumerable.Empty<string>());
         if (!string.IsNullOrEmpty(expand))
@@ -323,7 +335,7 @@ public static class ContentExtensions
             searchUri = searchUri.ExtendQuery("cqlcontext", searchDetails.CqlContext);
         }
 
-        var response = await searchUri.GetAsAsync<HttpResponse<Result<Content>, Error>>(cancellationToken).ConfigureAwait(false);
+        var response = await searchUri.GetAsAsync<HttpResponse<CursorBasedResult<Content>, Error>>(cancellationToken).ConfigureAwait(false);
         return response.HandleErrors();
     }
 
