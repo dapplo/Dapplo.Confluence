@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>A library for accessing Atlassians Confluence from .NET</Description>
-    <TargetFrameworks>netstandard1.3;netstandard2.0;net471;netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net480;net10.0</TargetFrameworks>
     <PackageTags>atlassian;confluence;dapplo</PackageTags>
   </PropertyGroup>
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4'))">
@@ -9,7 +9,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Dapplo.HttpExtensions" Version="1.1.2" />
-    <PackageReference Include="Dapplo.HttpExtensions.JsonNet" Version="1.1.2" />
+    <PackageReference Include="Dapplo.HttpExtensions" Version="2.0.8" />
+    <PackageReference Include="Dapplo.HttpExtensions.JsonNet" Version="2.0.8" />
   </ItemGroup>
 </Project>

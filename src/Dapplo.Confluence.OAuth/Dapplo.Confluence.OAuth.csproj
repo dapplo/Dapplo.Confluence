@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>A library for accessing Atlassians Confluence from .NET via OAuth</Description>
-    <TargetFrameworks>net472;netcoreapp3.1;net6.0-windows</TargetFrameworks>
+    <TargetFrameworks>net480;net10.0-windows</TargetFrameworks>
     <PackageTags>atlassian;confluence;dapplo</PackageTags>
   </PropertyGroup>
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4'))">
@@ -12,7 +12,7 @@
     <PackageReference Include="Dapplo.HttpExtensions" Version="1.1.2" />
     <PackageReference Include="Dapplo.HttpExtensions.JsonNet" Version="1.1.2" />
   </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) Or $(TargetFramework.StartsWith('net6')) Or '$(TargetFramework)' == 'netcoreapp3.1'">
+  <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) Or $(TargetFramework.StartsWith('net10'))'">
     <PackageReference Include="Dapplo.HttpExtensions.OAuth" Version="1.1.2" />
   </ItemGroup>
   <ItemGroup>
