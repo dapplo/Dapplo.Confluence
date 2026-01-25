@@ -3,7 +3,6 @@
 
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Dapplo.Confluence.Tests;
 
@@ -20,7 +19,7 @@ public class ServerTests : ConfluenceIntegrationTests
     [Fact]
     public async Task Test_IsCloud()
     {
-        var isCloudServer = await ConfluenceTestClient.IsCloudServer();
+        var isCloudServer = await ConfluenceTestClient.IsCloudServer(cancellationToken: TestContext.Current.CancellationToken);
         Assert.True(isCloudServer);
     }
 }

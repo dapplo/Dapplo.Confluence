@@ -6,7 +6,6 @@ using Dapplo.Confluence.Query;
 using Dapplo.Log;
 using Dapplo.Log.XUnit;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Dapplo.Confluence.Tests;
 

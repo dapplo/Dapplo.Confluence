@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics;
 using Dapplo.Log;
 using Dapplo.Log.XUnit;
-using Xunit.Abstractions;
+using Xunit;
 
 namespace Dapplo.Confluence.Tests;
 

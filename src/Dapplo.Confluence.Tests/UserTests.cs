@@ -9,7 +9,6 @@ using Dapplo.HttpExtensions;
 using Dapplo.HttpExtensions.WinForms.ContentConverter;
 using Dapplo.HttpExtensions.Wpf.ContentConverter;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Dapplo.Confluence.Tests;
 
@@ -39,13 +38,13 @@ public class UserTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestCurrentUser()
     {
-        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync();
+        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(currentUser);
         Assert.True(currentUser.HasIdentifier());
         Assert.NotNull(currentUser.ProfilePicture);
         Assert.DoesNotContain("Anonymous", currentUser.DisplayName);
 
-        var currentUserIndirectly = await ConfluenceTestClient.User.GetUserAsync(currentUser);
+        var currentUserIndirectly = await ConfluenceTestClient.User.GetUserAsync(currentUser, cancellationToken: TestContext.Current.CancellationToken);
         Assert.Equal(currentUser.DisplayName, currentUserIndirectly.DisplayName);
     }
 
@@ -55,12 +54,12 @@ public class UserTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestCurrentUserPicture()
     {
-        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync();
+        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(currentUser);
         Assert.NotNull(currentUser.ProfilePicture);
         Assert.DoesNotContain("Anonymous", currentUser.DisplayName);
 
-        var bitmapSource = await ConfluenceTestClient.Misc.GetPictureAsync<BitmapSource>(currentUser.ProfilePicture);
+        var bitmapSource = await ConfluenceTestClient.Misc.GetPictureAsync<BitmapSource>(currentUser.ProfilePicture, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(bitmapSource);
         Assert.True(bitmapSource.Width > 0);
     }
@@ -71,8 +70,8 @@ public class UserTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestGetGroupMembershipsAsync()
     {
-        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync();
-        var groupsForUser = await ConfluenceTestClient.User.GetGroupMembershipsAsync(currentUser);
+        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync(cancellationToken: TestContext.Current.CancellationToken);
+        var groupsForUser = await ConfluenceTestClient.User.GetGroupMembershipsAsync(currentUser, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotEmpty(groupsForUser);
     }
 
@@ -91,27 +90,27 @@ public class UserTests : ConfluenceIntegrationTests
         };
 
         // Make sure there is a label
-        await ConfluenceTestClient.Content.AddLabelsAsync(contentId, Enumerable.Repeat(label, 1));
+        await ConfluenceTestClient.Content.AddLabelsAsync(contentId, Enumerable.Repeat(label, 1), cancellationToken: TestContext.Current.CancellationToken);
 
         try
         {
-            if (await ConfluenceTestClient.User.IsLabelWatcher(testLabel))
+            if (await ConfluenceTestClient.User.IsLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken))
             {
-                await ConfluenceTestClient.User.RemoveLabelWatcher(testLabel);
+                await ConfluenceTestClient.User.RemoveLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken);
             }
-            Assert.False(await ConfluenceTestClient.User.IsLabelWatcher(testLabel));
+            Assert.False(await ConfluenceTestClient.User.IsLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken));
 
             // Add the current user as a label watcher
-            await ConfluenceTestClient.User.AddLabelWatcher(testLabel);
-            Assert.True(await ConfluenceTestClient.User.IsLabelWatcher(testLabel));
+            await ConfluenceTestClient.User.AddLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken);
+            Assert.True(await ConfluenceTestClient.User.IsLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken));
 
-            await ConfluenceTestClient.User.RemoveLabelWatcher(testLabel);
-            Assert.False(await ConfluenceTestClient.User.IsLabelWatcher(testLabel));
+            await ConfluenceTestClient.User.RemoveLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken);
+            Assert.False(await ConfluenceTestClient.User.IsLabelWatcher(testLabel, cancellationToken: TestContext.Current.CancellationToken));
         }
         finally
         {
             // Make sure the label is removed again
-            await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, testLabel);
+            await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, testLabel, cancellationToken: TestContext.Current.CancellationToken);
         }
     }
 
@@ -123,18 +122,18 @@ public class UserTests : ConfluenceIntegrationTests
     {
         string testSpace = "TEST";
 
-        if (await ConfluenceTestClient.User.IsSpaceWatcher(testSpace))
+        if (await ConfluenceTestClient.User.IsSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken))
         {
-            await ConfluenceTestClient.User.RemoveSpaceWatcher(testSpace);
+            await ConfluenceTestClient.User.RemoveSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken);
         }
-        Assert.False(await ConfluenceTestClient.User.IsSpaceWatcher(testSpace));
+        Assert.False(await ConfluenceTestClient.User.IsSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken));
 
         // Add the current user as a space watcher
-        await ConfluenceTestClient.User.AddSpaceWatcher(testSpace);
-        Assert.True(await ConfluenceTestClient.User.IsSpaceWatcher(testSpace));
+        await ConfluenceTestClient.User.AddSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.True(await ConfluenceTestClient.User.IsSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken));
 
-        await ConfluenceTestClient.User.RemoveSpaceWatcher(testSpace);
-        Assert.False(await ConfluenceTestClient.User.IsSpaceWatcher(testSpace));
+        await ConfluenceTestClient.User.RemoveSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.False(await ConfluenceTestClient.User.IsSpaceWatcher(testSpace, cancellationToken: TestContext.Current.CancellationToken));
     }
 
     /// <summary>
@@ -144,17 +143,17 @@ public class UserTests : ConfluenceIntegrationTests
     public async Task TestContentWatcher()
     {
         long contentId = 550731777;
-        if (await ConfluenceTestClient.User.IsContentWatcher(contentId))
+        if (await ConfluenceTestClient.User.IsContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken))
         {
-            await ConfluenceTestClient.User.RemoveContentWatcher(contentId);
+            await ConfluenceTestClient.User.RemoveContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken);
         }
-        Assert.False(await ConfluenceTestClient.User.IsContentWatcher(contentId));
+        Assert.False(await ConfluenceTestClient.User.IsContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken));
 
         // Add the current user as a content watcher
-        await ConfluenceTestClient.User.AddContentWatcher(contentId);
-        Assert.True(await ConfluenceTestClient.User.IsContentWatcher(contentId));
+        await ConfluenceTestClient.User.AddContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.True(await ConfluenceTestClient.User.IsContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken));
 
-        await ConfluenceTestClient.User.RemoveContentWatcher(contentId);
-        Assert.False(await ConfluenceTestClient.User.IsContentWatcher(contentId));
+        await ConfluenceTestClient.User.RemoveContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.False(await ConfluenceTestClient.User.IsContentWatcher(contentId, cancellationToken: TestContext.Current.CancellationToken));
     }
 }

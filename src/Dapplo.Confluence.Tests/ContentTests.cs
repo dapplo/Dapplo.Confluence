@@ -13,7 +13,6 @@ using Dapplo.HttpExtensions.WinForms.ContentConverter;
 using Dapplo.HttpExtensions.Wpf.ContentConverter;
 using Dapplo.Log;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Dapplo.Confluence.Tests;
 
@@ -45,7 +44,7 @@ public class ContentTests : ConfluenceIntegrationTests
     public async Task Test_IsDefault()
     {
         var query = Where.And(Where.Space.Is("TEST"), Where.Type.IsPage, Where.Title.Contains("Doesn't exist"));
-        var searchResults = await ConfluenceTestClient.Content.SearchAsync(query);
+        var searchResults = await ConfluenceTestClient.Content.SearchAsync(query, cancellationToken: TestContext.Current.CancellationToken);
 
         var searchResult = searchResults.FirstOrDefault();
 
@@ -56,16 +55,16 @@ public class ContentTests : ConfluenceIntegrationTests
     public async Task Test_ContentVersion()
     {
         var query = Where.And(Where.Space.Is("TEST"), Where.Type.IsPage, Where.Title.Contains("Test Home"));
-        var searchResults = await ConfluenceTestClient.Content.SearchAsync(query);
+        var searchResults = await ConfluenceTestClient.Content.SearchAsync(query, cancellationToken: TestContext.Current.CancellationToken);
 
         var searchResult = searchResults.First();
         Log.Info().WriteLine("Version = {0}", searchResult.Version.Number);
         query = Where.Title.Contains("Test Home");
-        searchResults = await ConfluenceTestClient.Content.SearchAsync(query);
+        searchResults = await ConfluenceTestClient.Content.SearchAsync(query, cancellationToken: TestContext.Current.CancellationToken);
         searchResult = searchResults.First();
         Log.Info().WriteLine("Version = {0}", searchResult.Version.Number);
 
-        var content = await ConfluenceTestClient.Content.GetAsync(searchResult, ConfluenceClientConfig.ExpandGetContentWithStorage);
+        var content = await ConfluenceTestClient.Content.GetAsync(searchResult, ConfluenceClientConfig.ExpandGetContentWithStorage, cancellationToken: TestContext.Current.CancellationToken);
         Log.Info().WriteLine("Version = {0}", content.Version.Number);
     }
 
@@ -90,12 +89,12 @@ public class ContentTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestContentUpdate()
     {
-        var content = await ConfluenceTestClient.Content.GetAsync(550731777, ConfluenceClientConfig.ExpandGetContentForUpdate);
+        var content = await ConfluenceTestClient.Content.GetAsync(550731777, ConfluenceClientConfig.ExpandGetContentForUpdate, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(content);
         Assert.NotNull(content.Version);
         content.Body.Storage.Value += $"\r\nTesting 1 - 2 -3 {DateTimeOffset.Now}";
         content.Version = new Entities.Version { IsMinorEdit = false, Number = content.Version.Number + 1 };
-        await ConfluenceTestClient.Content.UpdateAsync(content);
+        await ConfluenceTestClient.Content.UpdateAsync(content, cancellationToken: TestContext.Current.CancellationToken);
     }
 
 
@@ -114,15 +113,15 @@ public class ContentTests : ConfluenceIntegrationTests
             },
             PageTitle = "Copied page"
         };
-        var content = await ConfluenceTestClient.Content.CopyAsync(550731777, copyContent);
+        var content = await ConfluenceTestClient.Content.CopyAsync(550731777, copyContent, cancellationToken: TestContext.Current.CancellationToken);
         try
         {
             Assert.NotNull(content);
-            await ConfluenceTestClient.Content.MoveAsync(content.Id, Positions.Append, 550731777);
+            await ConfluenceTestClient.Content.MoveAsync(content.Id, Positions.Append, 550731777, cancellationToken: TestContext.Current.CancellationToken);
         }
         finally
         {
-            await ConfluenceTestClient.Content.DeleteAsync(content.Id);
+            await ConfluenceTestClient.Content.DeleteAsync(content.Id, cancellationToken: TestContext.Current.CancellationToken);
         }
     }
 
@@ -132,7 +131,7 @@ public class ContentTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestGetChildren()
     {
-        var results = await ConfluenceTestClient.Content.GetChildrenAsync(550731777, new PagingInformation {Limit = 1});
+        var results = await ConfluenceTestClient.Content.GetChildrenAsync(550731777, new PagingInformation {Limit = 1}, cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(results);
         Assert.True(results.HasNext);
         Assert.True(results.Size > 0);
@@ -155,18 +154,18 @@ public class ContentTests : ConfluenceIntegrationTests
     public async Task TestCreateContent()
     {
         var query = Where.And(Where.Space.Is("TEST"), Where.Type.IsPage, Where.Title.Contains("Testing 1 2 3"));
-        var searchResults = await ConfluenceTestClient.Content.SearchAsync(query);
+        var searchResults = await ConfluenceTestClient.Content.SearchAsync(query, cancellationToken: TestContext.Current.CancellationToken);
         var oldPage = searchResults.Results.FirstOrDefault();
         if (oldPage != null)
         {
-            await ConfluenceTestClient.Content.DeleteAsync(oldPage);
+            await ConfluenceTestClient.Content.DeleteAsync(oldPage, cancellationToken: TestContext.Current.CancellationToken);
         }
-        await Task.Delay(1000);
-        var page = await ConfluenceTestClient.Content.CreateAsync(ContentTypes.Page, "Testing 1 2 3", "TEST", "<p>This is a test</p>");
+        await Task.Delay(1000, cancellationToken: TestContext.Current.CancellationToken);
+        var page = await ConfluenceTestClient.Content.CreateAsync(ContentTypes.Page, "Testing 1 2 3", "TEST", "<p>This is a test</p>", cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotNull(page);
         Assert.True(page.Id > 0);
-        await Task.Delay(1000);
-        await ConfluenceTestClient.Content.DeleteAsync(page);
+        await Task.Delay(1000, cancellationToken: TestContext.Current.CancellationToken);
+        await ConfluenceTestClient.Content.DeleteAsync(page, cancellationToken: TestContext.Current.CancellationToken);
     }
 
     //[Fact]
@@ -182,7 +181,7 @@ public class ContentTests : ConfluenceIntegrationTests
     {
         ConfluenceClientConfig.ExpandSearch = new[] { "version", "space", "space.icon", "space.description", "space.homepage", "history.lastUpdated" };
 
-        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation {Limit = 20});
+        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation {Limit = 20}, cancellationToken: TestContext.Current.CancellationToken);
         Assert.Equal(ContentTypes.Page, searchResult.First().Type);
         var uri = ConfluenceTestClient.CreateWebUiUri(searchResult.FirstOrDefault()?.Links);
         Assert.NotNull(uri);
@@ -195,27 +194,27 @@ public class ContentTests : ConfluenceIntegrationTests
 
         var query = Where.And(Where.Type.IsAttachment, Where.Text.Contains("404"));
 
-        var searchResult = await ConfluenceTestClient.Content.SearchAsync(query, pagingInformation: new PagingInformation { Limit = 1 });
+        var searchResult = await ConfluenceTestClient.Content.SearchAsync(query, pagingInformation: new PagingInformation { Limit = 1 }, cancellationToken: TestContext.Current.CancellationToken);
         var attachment = searchResult.First();
         Assert.Equal(ContentTypes.Attachment, attachment.Type);
         Assert.NotNull(ConfluenceTestClient.Attachment.CreateDownloadUri(attachment.Links));
         // I know the attachment is a bitmap, this should work
-        var bitmap = await ConfluenceTestClient.Attachment.GetContentAsync<Bitmap>(attachment);
+        var bitmap = await ConfluenceTestClient.Attachment.GetContentAsync<Bitmap>(attachment, cancellationToken: TestContext.Current.CancellationToken);
         Assert.True(bitmap.Width > 0);
     }
 
     [Fact]
     public async Task TestSearchLabels()
     {
-        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 });
+        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 }, cancellationToken: TestContext.Current.CancellationToken);
         var contentId = searchResult.First().Id;
 
         var labels = new[] { "test1", "test2" };
-        await ConfluenceTestClient.Content.AddLabelsAsync(contentId, labels.Select(s => new Label { Name = s }));
+        await ConfluenceTestClient.Content.AddLabelsAsync(contentId, labels.Select(s => new Label { Name = s }), cancellationToken: TestContext.Current.CancellationToken);
 
         ConfluenceClientConfig.ExpandSearch = new[] { "version", "space", "space.icon", "space.description", "space.homepage", "history.lastUpdated", "metadata.labels" };
 
-        searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 });
+        searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 }, cancellationToken: TestContext.Current.CancellationToken);
         var labelEntities = searchResult.First().Metadata.Labels.Results;
 
         Assert.NotEmpty(labelEntities);
@@ -223,25 +222,25 @@ public class ContentTests : ConfluenceIntegrationTests
         // Delete all
         foreach (var label in labelEntities)
         {
-            await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, label.Name);
+            await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, label.Name, cancellationToken: TestContext.Current.CancellationToken);
         }
     }
 
     [Fact]
     public async Task TestLabels()
     {
-        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 });
+        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 }, cancellationToken: TestContext.Current.CancellationToken);
         var contentId = searchResult.First().Id;
 
         var labels = new[] { "test1", "test2" };
-        await ConfluenceTestClient.Content.AddLabelsAsync(contentId, labels.Select(s => new Label { Name = s }));
-        var labelsForContent = await ConfluenceTestClient.Content.GetLabelsAsync(contentId);
+        await ConfluenceTestClient.Content.AddLabelsAsync(contentId, labels.Select(s => new Label { Name = s }), cancellationToken: TestContext.Current.CancellationToken);
+        var labelsForContent = await ConfluenceTestClient.Content.GetLabelsAsync(contentId, cancellationToken: TestContext.Current.CancellationToken);
         Assert.Equal(labels.Length, labelsForContent.Count(label => labels.Contains(label.Name)));
 
         // Delete all
         foreach (var label in labelsForContent)
         {
-            await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, label.Name);
+            await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, label.Name, cancellationToken: TestContext.Current.CancellationToken);
         }
     }
 }

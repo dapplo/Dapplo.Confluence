@@ -4,7 +4,6 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 namespace Dapplo.Confluence.Tests;
 
@@ -24,7 +23,7 @@ public class GroupTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestGetGroups()
     {
-        var groups = await ConfluenceTestClient.Group.GetGroupsAsync();
+        var groups = await ConfluenceTestClient.Group.GetGroupsAsync(cancellationToken: TestContext.Current.CancellationToken);
         Assert.NotEmpty(groups);
     }
 
@@ -34,10 +33,10 @@ public class GroupTests : ConfluenceIntegrationTests
     [Fact]
     public async Task TestGetGroupMembersAsync()
     {
-        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync();
-        var groupsForUser = await ConfluenceTestClient.User.GetGroupMembershipsAsync(currentUser);
+        var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync(cancellationToken: TestContext.Current.CancellationToken);
+        var groupsForUser = await ConfluenceTestClient.User.GetGroupMembershipsAsync(currentUser, cancellationToken: TestContext.Current.CancellationToken);
 
-        var usersInGroup = await ConfluenceTestClient.Group.GetGroupMembersAsync(groupsForUser.First().Name);
+        var usersInGroup = await ConfluenceTestClient.Group.GetGroupMembersAsync(groupsForUser.First().Name, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Contains(currentUser.AccountId, usersInGroup.Select(u => u.AccountId));
     }
