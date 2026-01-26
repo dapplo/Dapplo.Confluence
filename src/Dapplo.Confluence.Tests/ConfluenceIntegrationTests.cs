@@ -26,8 +26,8 @@ public abstract class ConfluenceIntegrationTests
         LogSettings.RegisterDefaultLogger<XUnitLogger>(LogLevels.Verbose, testOutputHelper);
         ConfluenceTestClient = ConfluenceClient.Create(TestConfluenceUri);
 
-        var username = Environment.GetEnvironmentVariable("confluence_test_username");
-        var password = Environment.GetEnvironmentVariable("confluence_test_password");
+        var username = Environment.GetEnvironmentVariable("CONFLUENCE_TEST_USERNAME");
+        var password = Environment.GetEnvironmentVariable("CONFLUENCE_TEST_PASSWORD");
         if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
         {
             ConfluenceTestClient.SetBasicAuthentication(username, password);
