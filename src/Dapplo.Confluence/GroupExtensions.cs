@@ -44,24 +44,22 @@ public static class GroupDomain
     }
 
     /// <summary>
-    ///     Get the members of a group
+    ///     Get the members of a group for the given group Id
     /// </summary>
     /// <param name="confluenceClient">IGroupDomain to bind the extension method to</param>
-    /// <param name="groupName">string with the name of the group to retrieve the members for</param>
+    /// <param name="groupId">string with the id of the group to retrieve the members for</param>
     /// <param name="pagingInformation">PagingInformation</param>
     /// <param name="cancellationToken">CancellationToken</param>
     /// <returns>List with Users</returns>
-    public static async Task<IEnumerable<User>> GetGroupMembersAsync(this IGroupDomain confluenceClient, string groupName, PagingInformation pagingInformation = null, CancellationToken cancellationToken = default)
+    public static async Task<IEnumerable<User>> GetGroupMembersByGroupIdAsync(this IGroupDomain confluenceClient, string groupId, PagingInformation pagingInformation = null, CancellationToken cancellationToken = default)
     {
-        if (string.IsNullOrEmpty(groupName)) throw new ArgumentNullException(nameof(groupName));
-
         pagingInformation ??= new PagingInformation
         {
             Limit = 200,
             Start = 0
         };
         var groupUri = confluenceClient.ConfluenceApiUri
-            .AppendSegments("group", groupName, "member")
+            .AppendSegments("group", groupId, "membersByGroupId")
             .ExtendQuery(new Dictionary<string, object> {
                 {
                     "start", pagingInformation.Start

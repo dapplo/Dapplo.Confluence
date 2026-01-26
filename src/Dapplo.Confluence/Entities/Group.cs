@@ -10,17 +10,11 @@ namespace Dapplo.Confluence.Entities;
 ///     See: https://docs.atlassian.com/confluence/REST/latest
 /// </summary>
 [JsonObject]
-public class Group
+public class Group : BaseEntity<string>
 {
     /// <summary>
     ///     Name of the group
     /// </summary>
     [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
     public string Name { get; set; }
-
-    /// <summary>
-    ///     Type
-    /// </summary>
-    [JsonProperty("type", DefaultValueHandling = DefaultValueHandling.Ignore)]
-    public string Type { get; set; }
 }

@@ -35,8 +35,7 @@ public class GroupTests : ConfluenceIntegrationTests
     {
         var currentUser = await ConfluenceTestClient.User.GetCurrentUserAsync(cancellationToken: TestContext.Current.CancellationToken);
         var groupsForUser = await ConfluenceTestClient.User.GetGroupMembershipsAsync(currentUser, cancellationToken: TestContext.Current.CancellationToken);
-
-        var usersInGroup = await ConfluenceTestClient.Group.GetGroupMembersAsync(groupsForUser.First().Name, cancellationToken: TestContext.Current.CancellationToken);
+        var usersInGroup = await ConfluenceTestClient.Group.GetGroupMembersByGroupIdAsync(groupsForUser.Where(g => g.Name.StartsWith("confluence")).First().Id, cancellationToken: TestContext.Current.CancellationToken);
 
         Assert.Contains(currentUser.AccountId, usersInGroup.Select(u => u.AccountId));
     }

@@ -34,5 +34,10 @@ public enum ContentTypes
 	/// <summary>
 	/// The content is a personal page
 	/// </summary>
-	[EnumMember(Value = "personal")] Personal
+	[EnumMember(Value = "personal")] Personal,
+    /// <summary>
+    /// The content is a group
+    /// </summary>
+    [EnumMember(Value = "group")] Group
+
 }

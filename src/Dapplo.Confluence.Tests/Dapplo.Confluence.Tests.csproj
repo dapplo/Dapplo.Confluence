@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Ben.Demystifier" Version="0.4.1" />
-    <PackageReference Include="Dapplo.HttpExtensions.WinForms" Version="2.0.10" />
+    <PackageReference Include="Dapplo.HttpExtensions.WinForms" Version="2.0.11" />
     <PackageReference Include="Dapplo.HttpExtensions.Wpf" Version="2.0.10" />
     <PackageReference Include="Dapplo.Log.XUnit" Version="3.0.22">
       <PrivateAssets>All</PrivateAssets>
@@ -31,16 +31,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="xunit.runner.console" Version="2.9.3">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
     <PackageReference Include="Dapplo.Utils" Version="1.1.21">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="coverlet.msbuild" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="xunit.v3.runner.console" Version="3.2.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
 
