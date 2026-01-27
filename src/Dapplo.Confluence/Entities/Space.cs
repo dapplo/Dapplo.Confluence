@@ -48,4 +48,16 @@ public class Space : BaseEntity<long>
     /// </summary>
     [JsonProperty("name", DefaultValueHandling = DefaultValueHandling.Ignore)]
     public string Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the unique identifier of the author of the space.
+    /// </summary>
+    [JsonProperty("authorId", DefaultValueHandling = DefaultValueHandling.Ignore)]
+    public string AuthorId { get; set; }
+
+    /// <summary>
+    /// Gets or sets the unique identifier of the homepage associated with the space.
+    /// </summary>
+    [JsonProperty("homepageId", DefaultValueHandling = DefaultValueHandling.Ignore)]
+    public long HomepageId { get; set; }
 }
