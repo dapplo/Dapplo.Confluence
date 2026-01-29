@@ -483,7 +483,12 @@ public static class ContentExtensions
             confluenceClient.Behaviour.MakeCurrent();
             var statusResponse = await statusUri.GetAsAsync<HttpResponse<LongRunningTask, Error>>(cancellationToken).ConfigureAwait(false);
             taskStatus = statusResponse.HandleErrors();
-        } while (taskStatus.Status != "complete" && !cancellationToken.IsCancellationRequested);
+        } while (taskStatus.Status != "complete" && taskStatus.Status != "failed" && !cancellationToken.IsCancellationRequested);
+
+        if (taskStatus.Status == "failed")
+        {
+            throw new InvalidOperationException("PDF export task failed");
+        }
 
         // Step 3: Download the PDF
         var downloadUri = new Uri(confluenceClient.ConfluenceUri, taskStatus.Links.Download);
