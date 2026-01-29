@@ -51,7 +51,8 @@ The server supports two authentication methods:
 
 ### Option 1: Bearer Token (Recommended)
 
-Configure via `appsettings.json`:
+1. Copy `appsettings.example.json` to `appsettings.json`
+2. Configure via `appsettings.json`:
 
 ```json
 {
