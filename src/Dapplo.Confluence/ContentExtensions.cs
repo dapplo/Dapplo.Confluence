@@ -452,4 +452,32 @@ public static class ContentExtensions
         var response = await labelUri.DeleteAsync<HttpResponse>(cancellationToken).ConfigureAwait(false);
         response.HandleStatusCode(HttpStatusCode.NoContent);
     }
+
+    /// <summary>
+    ///     Export a page as PDF using FlyingPDF
+    ///     See <a href="https://support.atlassian.com/confluence/kb/rest-api-to-export-and-download-a-page-in-pdf-format/">here</a>
+    /// </summary>
+    /// <typeparam name="TResponse">The type to return the result into, e.g. byte[] or Stream</typeparam>
+    /// <param name="confluenceClient">IContentDomain to bind the extension method to</param>
+    /// <param name="contentId">content id of the page to export</param>
+    /// <param name="cancellationToken">CancellationToken</param>
+    /// <returns>PDF content as TResponse</returns>
+    public static async Task<TResponse> GetPdfAsync<TResponse>(this IContentDomain confluenceClient, long contentId, CancellationToken cancellationToken = default)
+        where TResponse : class
+    {
+        if (contentId == 0) throw new ArgumentNullException(nameof(contentId));
+
+        // Use the FlyingPDF export action endpoint
+        // This endpoint returns a 302 redirect to the actual PDF download URL
+        // HttpClient will automatically follow the redirect
+        var exportUri = confluenceClient.ConfluenceUri
+            .AppendSegments("spaces", "flyingpdf", "pdfpageexport.action")
+            .ExtendQuery("pageId", contentId);
+
+        confluenceClient.Behaviour.MakeCurrent();
+
+        // The HttpClient will automatically follow the redirect and download the PDF
+        var response = await exportUri.GetAsAsync<HttpResponse<TResponse, Error>>(cancellationToken).ConfigureAwait(false);
+        return response.HandleErrors();
+    }
 }
