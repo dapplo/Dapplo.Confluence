@@ -465,7 +465,7 @@ public static class ContentExtensions
     public static async Task<TResponse> GetPdfAsync<TResponse>(this IContentDomain confluenceClient, long contentId, CancellationToken cancellationToken = default)
         where TResponse : class
     {
-        if (contentId == 0) throw new ArgumentException("Content ID cannot be zero", nameof(contentId));
+        if (contentId == 0) throw new ArgumentNullException(nameof(contentId));
 
         // Use the FlyingPDF export action endpoint
         // This endpoint returns a 302 redirect to the actual PDF download URL
