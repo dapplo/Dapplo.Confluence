@@ -243,4 +243,21 @@ public class ContentTests : ConfluenceIntegrationTests
             await ConfluenceTestClient.Content.DeleteLabelAsync(contentId, label.Name, cancellationToken: TestContext.Current.CancellationToken);
         }
     }
+
+    [Fact]
+    public async Task TestGetPdf()
+    {
+        var searchResult = await ConfluenceTestClient.Content.SearchAsync(Where.And(Where.Type.IsPage, Where.Text.Contains("Test Home")), pagingInformation: new PagingInformation { Limit = 1 }, cancellationToken: TestContext.Current.CancellationToken);
+        var contentId = searchResult.First().Id;
+
+        var pdfBytes = await ConfluenceTestClient.Content.GetPdfAsync<byte[]>(contentId, cancellationToken: TestContext.Current.CancellationToken);
+        Assert.NotNull(pdfBytes);
+        Assert.True(pdfBytes.Length > 0);
+        
+        // Verify it's a PDF by checking the magic bytes
+        Assert.Equal(0x25, pdfBytes[0]); // %
+        Assert.Equal(0x50, pdfBytes[1]); // P
+        Assert.Equal(0x44, pdfBytes[2]); // D
+        Assert.Equal(0x46, pdfBytes[3]); // F
+    }
 }

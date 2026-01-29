@@ -452,4 +452,43 @@ public static class ContentExtensions
         var response = await labelUri.DeleteAsync<HttpResponse>(cancellationToken).ConfigureAwait(false);
         response.HandleStatusCode(HttpStatusCode.NoContent);
     }
+
+    /// <summary>
+    ///     Export a page as PDF
+    ///     See <a href="https://support.atlassian.com/confluence/kb/rest-api-to-export-and-download-a-page-in-pdf-format/">here</a>
+    /// </summary>
+    /// <typeparam name="TResponse">The type to return the result into, e.g. byte[] or Stream</typeparam>
+    /// <param name="confluenceClient">IContentDomain to bind the extension method to</param>
+    /// <param name="contentId">content id of the page to export</param>
+    /// <param name="cancellationToken">CancellationToken</param>
+    /// <returns>PDF content as TResponse</returns>
+    public static async Task<TResponse> GetPdfAsync<TResponse>(this IContentDomain confluenceClient, long contentId, CancellationToken cancellationToken = default)
+        where TResponse : class
+    {
+        if (contentId == 0) throw new ArgumentNullException(nameof(contentId));
+
+        // Step 1: Initiate PDF export
+        var exportUri = confluenceClient.ConfluenceApiUri.AppendSegments("content", contentId, "export", "pdf");
+        confluenceClient.Behaviour.MakeCurrent();
+
+        var exportResponse = await exportUri.PostAsync<HttpResponse<LongRunningTask, Error>>(null, cancellationToken).ConfigureAwait(false);
+        var task = exportResponse.HandleErrors();
+
+        // Step 2: Poll for task completion
+        var statusUri = new Uri(confluenceClient.ConfluenceUri, task.Links.Status);
+        LongRunningTask taskStatus;
+        do
+        {
+            await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
+            confluenceClient.Behaviour.MakeCurrent();
+            var statusResponse = await statusUri.GetAsAsync<HttpResponse<LongRunningTask, Error>>(cancellationToken).ConfigureAwait(false);
+            taskStatus = statusResponse.HandleErrors();
+        } while (taskStatus.Status != "complete" && !cancellationToken.IsCancellationRequested);
+
+        // Step 3: Download the PDF
+        var downloadUri = new Uri(confluenceClient.ConfluenceUri, taskStatus.Links.Download);
+        confluenceClient.Behaviour.MakeCurrent();
+        var downloadResponse = await downloadUri.GetAsAsync<HttpResponse<TResponse, Error>>(cancellationToken).ConfigureAwait(false);
+        return downloadResponse.HandleErrors();
+    }
 }
