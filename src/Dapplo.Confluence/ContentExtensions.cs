@@ -465,7 +465,9 @@ public static class ContentExtensions
     public static async Task<TResponse> GetPdfAsync<TResponse>(this IContentDomain confluenceClient, long contentId, CancellationToken cancellationToken = default)
         where TResponse : class
     {
-        if (contentId == 0) throw new ArgumentNullException(nameof(contentId));
+        const int PollIntervalMilliseconds = 1000;
+        
+        if (contentId == 0) throw new ArgumentException("Content ID cannot be zero", nameof(contentId));
 
         // Step 1: Initiate PDF export
         var exportUri = confluenceClient.ConfluenceApiUri.AppendSegments("content", contentId, "export", "pdf");
@@ -474,20 +476,35 @@ public static class ContentExtensions
         var exportResponse = await exportUri.PostAsync<HttpResponse<LongRunningTask, Error>>(null, cancellationToken).ConfigureAwait(false);
         var task = exportResponse.HandleErrors();
 
+        if (task?.Links?.Status == null)
+        {
+            throw new InvalidOperationException("PDF export response did not contain expected status link");
+        }
+
         // Step 2: Poll for task completion
         var statusUri = new Uri(confluenceClient.ConfluenceUri, task.Links.Status);
         LongRunningTask taskStatus;
         do
         {
-            await Task.Delay(1000, cancellationToken).ConfigureAwait(false);
+            await Task.Delay(PollIntervalMilliseconds, cancellationToken).ConfigureAwait(false);
             confluenceClient.Behaviour.MakeCurrent();
             var statusResponse = await statusUri.GetAsAsync<HttpResponse<LongRunningTask, Error>>(cancellationToken).ConfigureAwait(false);
             taskStatus = statusResponse.HandleErrors();
-        } while (taskStatus.Status != "complete" && taskStatus.Status != "failed" && !cancellationToken.IsCancellationRequested);
+        } while (taskStatus.Status != "complete" && taskStatus.Status != "failed");
+
+        cancellationToken.ThrowIfCancellationRequested();
 
         if (taskStatus.Status == "failed")
         {
-            throw new InvalidOperationException("PDF export task failed");
+            var errorDetails = taskStatus.AdditionalDetails != null && taskStatus.AdditionalDetails.Count > 0
+                ? string.Join(", ", taskStatus.AdditionalDetails.Select(kvp => $"{kvp.Key}: {kvp.Value}"))
+                : "No additional details available";
+            throw new InvalidOperationException($"PDF export task {task.Id} failed: {errorDetails}");
+        }
+
+        if (taskStatus?.Links?.Download == null)
+        {
+            throw new InvalidOperationException("PDF export task completed but did not contain download link");
         }
 
         // Step 3: Download the PDF
