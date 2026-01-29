@@ -454,7 +454,7 @@ public static class ContentExtensions
     }
 
     /// <summary>
-    ///     Export a page as PDF
+    ///     Export a page as PDF using FlyingPDF
     ///     See <a href="https://support.atlassian.com/confluence/kb/rest-api-to-export-and-download-a-page-in-pdf-format/">here</a>
     /// </summary>
     /// <typeparam name="TResponse">The type to return the result into, e.g. byte[] or Stream</typeparam>
@@ -465,52 +465,19 @@ public static class ContentExtensions
     public static async Task<TResponse> GetPdfAsync<TResponse>(this IContentDomain confluenceClient, long contentId, CancellationToken cancellationToken = default)
         where TResponse : class
     {
-        const int PollIntervalMilliseconds = 1000;
-        
         if (contentId == 0) throw new ArgumentException("Content ID cannot be zero", nameof(contentId));
 
-        // Step 1: Initiate PDF export
-        var exportUri = confluenceClient.ConfluenceApiUri.AppendSegments("content", contentId, "export", "pdf");
+        // Use the FlyingPDF export action endpoint
+        // This endpoint returns a 302 redirect to the actual PDF download URL
+        // HttpClient will automatically follow the redirect
+        var exportUri = confluenceClient.ConfluenceUri
+            .AppendSegments("spaces", "flyingpdf", "pdfpageexport.action")
+            .ExtendQuery("pageId", contentId);
+
         confluenceClient.Behaviour.MakeCurrent();
 
-        var exportResponse = await exportUri.PostAsync<HttpResponse<LongRunningTask, Error>>(null, cancellationToken).ConfigureAwait(false);
-        var task = exportResponse.HandleErrors();
-
-        if (task?.Links?.Status == null)
-        {
-            throw new InvalidOperationException("PDF export response did not contain expected status link");
-        }
-
-        // Step 2: Poll for task completion
-        var statusUri = new Uri(confluenceClient.ConfluenceUri, task.Links.Status);
-        LongRunningTask taskStatus;
-        do
-        {
-            await Task.Delay(PollIntervalMilliseconds, cancellationToken).ConfigureAwait(false);
-            confluenceClient.Behaviour.MakeCurrent();
-            var statusResponse = await statusUri.GetAsAsync<HttpResponse<LongRunningTask, Error>>(cancellationToken).ConfigureAwait(false);
-            taskStatus = statusResponse.HandleErrors();
-        } while (taskStatus.Status != "complete" && taskStatus.Status != "failed");
-
-        cancellationToken.ThrowIfCancellationRequested();
-
-        if (taskStatus.Status == "failed")
-        {
-            var errorDetails = taskStatus.AdditionalDetails != null && taskStatus.AdditionalDetails.Count > 0
-                ? string.Join(", ", taskStatus.AdditionalDetails.Select(kvp => $"{kvp.Key}: {kvp.Value}"))
-                : "No additional details available";
-            throw new InvalidOperationException($"PDF export task {task.Id} failed: {errorDetails}");
-        }
-
-        if (taskStatus?.Links?.Download == null)
-        {
-            throw new InvalidOperationException("PDF export task completed but did not contain download link");
-        }
-
-        // Step 3: Download the PDF
-        var downloadUri = new Uri(confluenceClient.ConfluenceUri, taskStatus.Links.Download);
-        confluenceClient.Behaviour.MakeCurrent();
-        var downloadResponse = await downloadUri.GetAsAsync<HttpResponse<TResponse, Error>>(cancellationToken).ConfigureAwait(false);
-        return downloadResponse.HandleErrors();
+        // The HttpClient will automatically follow the redirect and download the PDF
+        var response = await exportUri.GetAsAsync<HttpResponse<TResponse, Error>>(cancellationToken).ConfigureAwait(false);
+        return response.HandleErrors();
     }
 }
