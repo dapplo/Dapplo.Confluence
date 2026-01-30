@@ -7,6 +7,8 @@ This is a simple REST based Confluence client, written for Greenshot, by using D
 
 The Confluence client supports most REST methods, and has a fluent API for building a CQL (Confluence Query Language) string to search with.
 
+For a detailed overview of supported and missing functionality, see [API_COVERAGE.md](API_COVERAGE.md).
+
 An example on how to use this Confluence client:
 ```
 var confluenceClient = ConfluenceClient.Create(new Uri("https://confluence"));
