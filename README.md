@@ -5,6 +5,24 @@ This is a simple REST based Confluence client, written for Greenshot, by using D
 - Coverage Status: [![Coverage Status](https://coveralls.io/repos/github/dapplo/Dapplo.Confluence/badge.svg?branch=master)](https://coveralls.io/github/dapplo/Dapplo.Confluence?branch=master)
 - NuGet package: [![NuGet package](https://badge.fury.io/nu/Dapplo.Confluence.svg)](https://badge.fury.io/nu/Dapplo.Confluence)
 
+## 🆕 MCP Server for AI Integration
+
+**NEW**: Integrate Confluence with AI assistants like Claude Desktop and Microsoft 365 Copilot!
+
+The [Dapplo.Confluence.McpServer](src/Dapplo.Confluence.McpServer) provides a Model Context Protocol (MCP) server that exposes Confluence functionality to AI assistants. 
+
+**Quick start:**
+```bash
+cd src/Dapplo.Confluence.McpServer
+cp appsettings.example.json appsettings.json
+# Edit appsettings.json with your Confluence URL and API token
+dotnet run
+```
+
+See the [Quick Start Guide](src/Dapplo.Confluence.McpServer/QUICKSTART.md) and [full documentation](src/Dapplo.Confluence.McpServer/README.md) for details.
+
+## Confluence Client Library
+
 The Confluence client supports most REST methods, and has a fluent API for building a CQL (Confluence Query Language) string to search with.
 
 An example on how to use this Confluence client:

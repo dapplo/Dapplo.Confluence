@@ -226,3 +226,6 @@ doc/api/.manifest
 CoverageReport
 coverage.xml
 xunit.xml
+
+# MCP Server configuration with secrets
+src/Dapplo.Confluence.McpServer/appsettings.json
