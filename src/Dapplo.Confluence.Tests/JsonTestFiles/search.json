@@ -29,6 +29,7 @@
 	"size": 1,
 	"_links": {
 		"self": "https://greenshot.atlassian.net/wiki/rest/api/content/search?cql=text%20~%20%22greenshot%22",
+		"next": "/rest/api/search?cql=text%20~%20%22greenshot%22&limit=25&cursor=raNDoMsTRiNg",
 		"base": "https://greenshot.atlassian.net/wiki",
 		"context": "/wiki"
 	}
